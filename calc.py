@@ -8,9 +8,10 @@ def plus(op1, op2):
     """ Function to sum the operands """
     return op1 + op2
 
-def min(op1,op2):
-        """ Function to substract the operands """
-        return op1 - op2
+
+def min(op1, op2):
+    """ Function to substract the operands """
+    return op1 - op2
 
 if __name__ == "__main__":
     try:
@@ -23,7 +24,6 @@ if __name__ == "__main__":
         result = plus(operando1, operando2)
     elif sys.argv[2] == "resta":
         result = min(operando1, operando2)
-    
     else:
         sys.exit('Operación sólo puede ser sumar o restar.')
 
