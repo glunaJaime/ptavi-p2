@@ -4,8 +4,11 @@
 import sys
 import calcoohija
 
-fichero = open('ficherooperations', 'r')
-fichero = fichero.readlines()
+if(sys.argv[1] == 'fichero'):
+    fichero = open('fichero.csv', 'r')
+    fichero = fichero.readlines()
+else:
+    sys.exit("file not found")
 
 if __name__ == "__main__":
 
@@ -16,13 +19,13 @@ if __name__ == "__main__":
         datos = line.split(',')[1:]
         resultado = int(datos[0])
 
-        if operations == "multiplicación":
-            print("resultado multiplicación = ")
+        if operations == "multiplica":
+            print("resultado multiplicacion = ")
             for n in range(1, len(datos)):
                 resultado = calcplus.multiply(resultado, int(datos[n]))
 
-        elif operations == "división":
-            print("resultado división = ")
+        elif operations == "divide":
+            print("resultado division = ")
             for n in range(1, len(datos)):
                 if datos == "0":
                     resultado = ("Error: no se puede dividir por 0")
@@ -31,12 +34,12 @@ if __name__ == "__main__":
         elif operations == "suma":
             print("resultado suma = ")
             for n in range(1, len(datos)):
-                resultado = calcplus.suma(resultado, int(datos[n]))
+                resultado = calcplus.plus(resultado, int(datos[n]))
 
         elif operations == "resta":
             print("resultado resta = ")
             for n in range(1, len(datos)):
-                resultado = calcplus.resta(resultado, int(datos[n]))
+                resultado = calcplus.min(resultado, int(datos[n]))
         else:
             sys.exit("sólo puede ser multiplicación, división, suma o resta")
 

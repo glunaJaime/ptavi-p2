@@ -6,7 +6,7 @@ import calcoohija
 import csv
 
 fichero = sys.argv[1]
-with open(fichero) as fich:
+with open('fichero.csv', 'r') as fich:
     fichero = csv.reader(fich)
     calcplus = calcoohija.CalculadoraHija()
 
@@ -15,28 +15,28 @@ with open(fichero) as fich:
         datos = line[1:]
         result = int(datos[0])
 
-        if operations == "multiplicación":
+        if operations == "multiplica":
             print("resultado multiplicación = ")
             for n in range(1, len(datos)):
-                resultado = calcplus.multi(resultado, int(datos[n]))
+                resultado = calcplus.multiply(result, int(datos[n]))
 
-        elif operations == "división":
+        elif operations == "divide":
             print("resultado división = ")
             for n in range(1, len(datos)):
                 if datos == "0":
                     resultado = ("Error: no se puede dividir por 0")
                 else:
-                    resultado = calcplus.div(resultado, int(datos[n]))
+                    resultado = calcplus.divide(result, int(datos[n]))
         elif operations == "suma":
             print("resultado suma = ")
             for n in range(1, len(datos)):
-                resultado = calcplus.suma(resultado, int(datos[n]))
+                resultado = calcplus.plus(result, int(datos[n]))
 
         elif operations == "resta":
             print("resultado resta = ")
             for n in range(1, len(datos)):
-                resultado = calcplus.rest(resultado, int(datos[n]))
+                resultado = calcplus.min(result, int(datos[n]))
         else:
             sys.exit("sólo puede ser multiplicación, división, suma o resta")
 
-        print(resultado)
+        print(result)
