@@ -20,12 +20,12 @@ if __name__== "__main__":
         sys.exit("Error: Non numerical parameters")
         calculadorahija = CalculadoraHija()
      if sys.argv[2] == "multiplicacion":
-        result = calculadorahija.multi(operando1, operando2)
+        result = calculadorahija.multiply(operando1, operando2)
     elif sys.argv[2] == "division":
             if operando2 == 0:
                 result = "Error: Division by 0 is not allowed"
             else:
-                result = calculadorahija.divi(operando1, operando2)
+                result = calculadorahija.divide(operando1, operando2)
     elif sys.argv[2] == "suma":
         result = calculadorahija.suma(operando1, operando2)
     elif sys.argv[2] == "resta":
